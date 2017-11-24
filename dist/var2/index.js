@@ -26,3 +26,4 @@ window.exp23a.signIn.confirmationAbcss = "<style>\n        /* feedback popup */\
 // ------------------------------------- HTML
 window.exp23a.signIn.confirmationHtml = $("<div id=\"exp23_signUp_confirmation\" class=\"confirmationPopup exp23\">\n    <span id=\"confirmationCloseBtn\" class=\"close-btn mck-radial-x-icon\" role=\"link\"></span>\n    <h1 class=\"confirmationTitle\">Thank you for signing up!</h1>\n    <p class=\"confirmationDescription\">Feel free to <a href=\"/user-registration/manage-account/edit-subscriptions\">select your topics of interest</a>  or <a href=\"/user-registration/manage-account/edit-profile\">change your password</a> at any time.</p>\n</div>");
 //-------------------------------------------------------------------------------- FEEDBACK // ^^^
+//# sourceMappingURL=index.js.map

@@ -1,5 +1,7 @@
 "use strict";
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //-------------------------------------------------------------------------------- SIGN UP \\
 // ------------------------------------- CSS
 window.exp23a.signUp.abcss = "<style>\n    @media screen and (max-width: 767px) {\n        #signUpWhite, #signInWhite, #formExp23_forgotPassword {\n            display: none !important;\n        }\n    }\n    \n    @media screen and (min-width: 768px) {\n        #signUpWhite .popup .wrapper, #signInWhite .popup .wrapper, #forgotPasswordWhite .popup .wrapper {\n                top: 0;\n                overflow-y: auto;\n                overflow-x: hidden;\n                height: 100%;\n                position: fixed !important;\n                left: calc(50%) !important;\n                margin: 0 0 0 -350px !important;\n                max-width: 700px !important;\n        }\n        #signUpWhite.ab-exp-23_signUp .popup-content, #signInWhite .popup-content, #forgotPasswordWhite .popup-content {\n            width: 660px;\n            border-radius: 3px;\n        }\n        #signInWhite .popup .wrapper::-webkit-scrollbar,#signUpWhite .popup .wrapper::-webkit-scrollbar,#forgotPasswordWhite .popup .wrapper::-webkit-scrollbar { \n            display: none; \n        }\n        }\n        #signInWhite .popup .wrapper::-moz-scrollbar,#signUpWhite .popup .wrapper::-webkit-scrollbar,#forgotPasswordWhite .popup .wrapper::-webkit-scrollbar { \n            display: none; \n        }\n        #signInWhite .popup-content, #signUpWhite .popup-content, #forgotPasswordWhite .popup-content {\n            margin: 40px auto auto;\n        }\n        #signUpWhite .form-content .form-group+.form-group, #signInWhite .form-content .form-group+.form-group, #formExp23_forgotPassword .form-content .form-group+.form-group{\n            margin-top: 30px;\n        }\n        #signUpWhite section.up, #signInWhite section.up, #formExp23_forgotPassword section.up{\n            margin-top: 30px;\n        }\n        .up.one-up.one-up-medium {\n            margin-top: 6px !important;\n        }\n        #signUpWhite .up.one-up.one-up-medium {\n            margin-left: 75px;\n        }\n        .captcha-wrapper{\n            margin-top:12px;\n        }\n        .submit-footer .form-group>p{\n            margin: 0;\n            font-size:14px;\n        }\n\n        /* -- Form close btn  -- */\n        .popup-content .closeText {\n            position: relative;\n            text-align: right;\n            font-size: 14px;\n            width: 620px;\n            top: 9px;\n            color: #00ACED;\n            display: inline-block;\n        }\n        .popup-window .popup .popup-content .close-btn {\n            margin: 0;\n        }\n        .popup-window .popup .popup-content .mck-radial-x-icon:before {\n            color: #fff !important;\n            ;\n        }\n        .popup-window .popup .popup-content .mck-radial-x-icon:after {\n            background-color: #2bafe9 !important;\n        }\n\n        #signUpWhite .one-up-medium {\n            width: 90%;\n        }\n        #signUpWhite header {\n            text-align: center;\n        }\n        #signUpWhite input, #signInWhite input {\n            border-radius: 3px;\n            width: 248px ;\n            height: 34px;\n            padding: 5px;\n        }\n\n        #forgotPasswordWhite input {\n            border-radius: 3px;\n            height: 34px;\n            width: 302px !important;\n        }\n\n        #signUpWhite .up.two-up{\n            margin: 0;\n            width: 100%;\n            text-align: center;\n        }\n        #signUpWhite .form-content .form-group label {\n            margin-bottom: 5px;\n        }\n        \n        #signUpWhite #signUpWhite_btnSubmit,  .noAccount {\n            margin-top: 20px;\n        }\n        #signUpWhite .g-recaptcha{\n            position: relative;\n            left: 100px;\n        }\n\n        .form-content .form-group.has-error label {\n            \n        }\n        .popup-window .popup .popup-content{\n            padding-bottom: 45px;\n        }\n\n        .popup-window .popup .popup-content .up .module-header {\n            width:100%;\n        }\n\n        .popup-window .popup .popup-content .up .module-header h3 {\n            font-size: 42px !important;\n            font-family: Chronicle Deck !important;\n            font-weight: 600;\n            line-height: 1em;\n            color: #00306e;\n            margin-bottom: 6px !important;\n        }\n\n        .popup-window .popup .popup-content .up .module-header .description.module-description {\n            font-size: 18px;\n            font-family: Chronicle Deck;\n            color: #000;\n            font-weight: 400;\n            line-height: 1.4em;\n            margin-top: 20px;\n        }\n\n        #signUpWhite.ab-exp-23_signUp.popup-window .form-content_exp23a_signUp {\n            width: 100% !important;\n        }\n        #signUpWhite.ab-exp-23_signUp.popup-window .popup-content .headline {\n            color: #03316c;\n            font-weight: 600;\n            margin-bottom: 30px;\n        }\n        #signUpWhite.ab-exp-23_signUp .form-row:nth-child(3) {\n            margin: 30px 0;\n        }\n        #signUpWhite.ab-exp-23_signUp .ab-message-hidden {\n            display: none;\n        }\n        #signUpWhite.ab-exp-23_signUp #errorMessage {\n            margin-bottom: 10px;\n            padding: 0;\n        }\n        /* -- Form fields  -- */\n        #signUpWhite.ab-exp-23_signUp .form-row {\n            display: table;\n        }\n        #signUpWhite.ab-exp-23_signUp .form-row .form-group:nth-child(1) {\n            padding-right: 10px;\n            display: table-cell;\n            width: 50%;\n        }\n        #signUpWhite.ab-exp-23_signUp .form-row .form-group:nth-child(2) {\n            padding-left: 10px;\n            display: table-cell;\n            width: 50%;\n        }\n        /* -- Form footer -- */\n        #signUpWhite.ab-exp-23_signUp .submit-footer {\n            display: table;\n            margin-top: 35px;\n        }\n        #signUpWhite.ab-exp-23_signUp .submit-footer form-group {\n            display: table-cell;\n        }\n\n        .form-content .form-group.has-error .help-block{\n            margin: 0 !important;\n            font-size: 12px;\n            height: 0;\n        }\n        .help-block-captcha {\n            font-size: 12px !important;\n            height:0;\n            display: block;\n            font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;\n            color: #ed1c24;\n            margin: 0;\n        }\n\n        #fromSignUpToSignIn, #fromSignInToSignUp, #fromForgotToSignUp, #fromSignInToForgot, #fromForgotToSignIn{\n            font-size: 12px;\n            font-family: Whitney SSm;\n        }\n        #input#signUpWhite_btnSubmit, #signInWhite_btnSubmit, #forgotPasswordWhite_btnSubmit{\n            font-size: 12px;\n        }\n    }\n</style>";
@@ -33,3 +35,142 @@ test = function test(text) {
 };
 
 test("yes ");
+
+console.log([1, 2, 3].map(function (n) {
+    return n + 1;
+}));
+
+a = new Set(3);
+
+// list matching
+var _ref = [1, 2, 3],
+    a = _ref[0],
+    b = _ref[2];
+
+// object matching
+
+var _getASTNode = getASTNode(),
+    a = _getASTNode.op,
+    b = _getASTNode.lhs.op,
+    c = _getASTNode.rhs;
+
+// object matching shorthand
+// binds `op`, `lhs` and `rhs` in scope
+
+
+var _getASTNode2 = getASTNode(),
+    op = _getASTNode2.op,
+    lhs = _getASTNode2.lhs,
+    rhs = _getASTNode2.rhs;
+
+// Can be used in parameter position
+
+
+function g(_ref2) {
+    var x = _ref2.name;
+
+    console.log(x);
+}
+g({ name: 5 });
+
+// Fail-soft destructuring
+var _ref3 = [],
+    a = _ref3[0];
+
+a === undefined;
+
+// Fail-soft destructuring with defaults
+var _ref4 = [],
+    _ref4$ = _ref4[0],
+    a = _ref4$ === undefined ? 1 : _ref4$;
+
+a === 1;
+
+//  -------------------------------
+
+function f(x) {
+    var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 12;
+
+    // y is 12 if not passed (or passed as undefined)
+    return x + y;
+}
+f(3) == 15;
+function f(x) {
+    // y is an Array
+    return x * (arguments.length <= 1 ? 0 : arguments.length - 1);
+}
+f(3, "hello", true) == 6;
+function f(x, y, z) {
+    return x + y + z;
+}
+// Pass each elem of array as argument
+f.apply(undefined, [1, 2, 3]) == 6;
+
+//  -------------------------------
+
+function f() {
+    {
+        var x = void 0;
+        {
+            // okay, block scoped name
+            var _x2 = "sneaky";
+        }
+    }
+}
+
+//  -------------------------------
+var fibonacci = _defineProperty({}, Symbol.iterator, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+    var pre, cur, temp;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+            switch (_context.prev = _context.next) {
+                case 0:
+                    pre = 0, cur = 1;
+
+                case 1:
+                    temp = pre;
+
+                    pre = cur;
+                    cur += temp;
+                    _context.next = 6;
+                    return cur;
+
+                case 6:
+                    _context.next = 1;
+                    break;
+
+                case 8:
+                case "end":
+                    return _context.stop();
+            }
+        }
+    }, _callee, this);
+}));
+
+var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
+
+try {
+    for (var _iterator = fibonacci[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var n = _step.value;
+
+        // truncate the sequence at 1000
+        if (n > 1000) break;
+        console.log(n);
+    }
+} catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+} finally {
+    try {
+        if (!_iteratorNormalCompletion && _iterator.return) {
+            _iterator.return();
+        }
+    } finally {
+        if (_didIteratorError) {
+            throw _iteratorError;
+        }
+    }
+}
+//# sourceMappingURL=index.js.map

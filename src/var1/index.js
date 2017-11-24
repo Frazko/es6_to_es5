@@ -617,3 +617,81 @@ window.exp23a.signIn.confirmationHtml = $(`<div id="exp23_signUp_confirmation" c
 test = text => text + "works";
 
 test("yes ");
+
+console.log([1, 2, 3].map(n => n + 1));
+
+a = new Set(3);
+
+// list matching
+var [a, , b] = [1, 2, 3];
+
+// object matching
+var { op: a, lhs: { op: b }, rhs: c } = getASTNode();
+
+// object matching shorthand
+// binds `op`, `lhs` and `rhs` in scope
+var { op, lhs, rhs } = getASTNode();
+
+// Can be used in parameter position
+function g({ name: x }) {
+  console.log(x);
+}
+g({ name: 5 });
+
+// Fail-soft destructuring
+var [a] = [];
+a === undefined;
+
+// Fail-soft destructuring with defaults
+var [a = 1] = [];
+a === 1;
+
+//  -------------------------------
+
+function f(x, y = 12) {
+  // y is 12 if not passed (or passed as undefined)
+  return x + y;
+}
+f(3) == 15;
+function f(x, ...y) {
+  // y is an Array
+  return x * y.length;
+}
+f(3, "hello", true) == 6;
+function f(x, y, z) {
+  return x + y + z;
+}
+// Pass each elem of array as argument
+f(...[1, 2, 3]) == 6;
+
+//  -------------------------------
+
+function f() {
+  {
+    let x;
+    {
+      // okay, block scoped name
+      const x = "sneaky";
+    }
+  }
+}
+
+//  -------------------------------
+var fibonacci = {
+  [Symbol.iterator]: function*() {
+    var pre = 0,
+      cur = 1;
+    for (;;) {
+      var temp = pre;
+      pre = cur;
+      cur += temp;
+      yield cur;
+    }
+  }
+};
+
+for (var n of fibonacci) {
+  // truncate the sequence at 1000
+  if (n > 1000) break;
+  console.log(n);
+}
